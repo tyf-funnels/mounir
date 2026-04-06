@@ -75,7 +75,6 @@ nav {
 }
 nav.scrolled { box-shadow: 0 4px 24px rgba(10,15,30,.1); }
 
-/* ─── 1️⃣ Brand name: Monir Phoune — latin, centered, no WA button ─── */
 .nav-logo {
   font-family: 'Cairo', sans-serif;
   font-weight: 900;
@@ -338,6 +337,29 @@ section { padding: 100px 5%; }
   direction: ltr;
 }
 
+/* ─── MODIFICATION 1: "اسألنا الآن" scroll button ──────── */
+.btn-scroll-to-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--wa), #1ebe57);
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: .9rem;
+  padding: 12px 22px;
+  border-radius: 100px;
+  box-shadow: 0 8px 32px rgba(37,211,102,.45);
+  transition: transform .25s var(--ease-out), box-shadow .25s;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+.btn-scroll-to-contact:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 40px rgba(37,211,102,.55);
+}
+
 /* ─── TRUST ──────────────────────────────────────────────── */
 #trust { background: var(--ink); overflow: hidden; position: relative; }
 .trust-bg {
@@ -398,7 +420,6 @@ section { padding: 100px 5%; }
   overflow: hidden;
   box-shadow: var(--shadow-l);
 }
-/* subtle card texture */
 .trust-card-mock::after {
   content: '';
   position: absolute;
@@ -603,6 +624,8 @@ section { padding: 100px 5%; }
   background: var(--ink);
   position: relative;
   overflow: hidden;
+  /* MODIFICATION 2: anchor target — extra top padding so nav doesn't overlap */
+  scroll-margin-top: 80px;
 }
 .final-section-bg {
   position: absolute;
@@ -814,7 +837,6 @@ footer strong { color: rgba(255,255,255,.6); font-family: 'Cairo', sans-serif; l
 <body>
 
 <!-- ── شريط التنقل ─────────────────────────────────────────── -->
-<!-- 1️⃣ Brand = "Monir Phoune" — no WhatsApp button -->
 <nav id="navbar">
   <div class="nav-logo">
     <span class="brand-first">Monir</span>
@@ -909,7 +931,6 @@ footer strong { color: rgba(255,255,255,.6); font-family: 'Cairo', sans-serif; l
       <div class="service-desc">ننفّذ مشترياتك من Temu بسرعة وموثوقية — بدون عناء مشاكل الدفع الدولي.</div>
     </div>
 
-    <!-- 2️⃣ "المزيد" → "وغيرها" -->
     <div class="service-card reveal" style="transition-delay:.25s">
       <div class="service-icon">🤖</div>
       <div class="service-name">تفعيل اشتراكات الذكاء الاصطناعي</div>
@@ -921,14 +942,16 @@ footer strong { color: rgba(255,255,255,.6); font-family: 'Cairo', sans-serif; l
       </div>
     </div>
 
+    <!-- MODIFICATION 1: "اسألنا الآن" is now a scroll button (not a WhatsApp link) -->
     <div class="service-card reveal" style="transition-delay:.3s; background: linear-gradient(135deg, #0a0f1e, #1a2035); border-color: rgba(18,69,234,.3);">
       <div class="service-icon" style="background: linear-gradient(135deg, rgba(18,69,234,.3), rgba(0,212,200,.3));">✨</div>
       <div class="service-name" style="color:#fff;">لم تجد خدمتك؟</div>
       <div class="service-desc" style="color:rgba(255,255,255,.5);">تواصل معنا عبر واتساب وسنبذل قصارى جهدنا لمساعدتك في أي احتياج رقمي.</div>
       <div style="margin-top:20px">
-        <a href="https://wa.me/213698282292" class="btn-primary" style="font-size:.9rem;padding:12px 22px;" target="_blank" rel="noopener">
+        <!-- Changed: was an <a> to WhatsApp; now a <button> that scrolls to #final-section -->
+        <button class="btn-scroll-to-contact" onclick="scrollToContact()">
           اسألنا الآن ←
-        </a>
+        </button>
       </div>
     </div>
 
@@ -982,7 +1005,6 @@ footer strong { color: rgba(255,255,255,.6); font-family: 'Cairo', sans-serif; l
       </div>
     </div>
 
-    <!-- 3️⃣ Card now shows "Monir Phoune" branding -->
     <div class="trust-visual reveal reveal-right" style="transition-delay:.3s">
       <div class="trust-card-mock">
         <div class="mock-shine"></div>
@@ -1011,7 +1033,7 @@ footer strong { color: rgba(255,255,255,.6); font-family: 'Cairo', sans-serif; l
   </div>
 </section>
 
-<!-- ── 4️⃣ الخدمة الحضورية — Maps button + hours ──────────── -->
+<!-- ── الخدمة الحضورية ────────────────────────────────────── -->
 <section id="local">
   <div class="local-inner">
     <div class="store-graphic reveal">🏪</div>
@@ -1022,13 +1044,11 @@ footer strong { color: rgba(255,255,255,.6); font-family: 'Cairo', sans-serif; l
     </p>
 
     <div class="local-actions reveal" style="transition-delay:.4s">
-      <!-- Maps button replacing WhatsApp button -->
       <a href="https://maps.app.goo.gl/fXuRAXorLoXPgnMGA" class="btn-maps" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
         📍 موقع المحل
       </a>
 
-      <!-- Hours card from the screenshot -->
       <div class="hours-card">
         <div class="hours-title">
           🕐 مواقيت العمل
@@ -1070,8 +1090,10 @@ footer strong { color: rgba(255,255,255,.6); font-family: 'Cairo', sans-serif; l
   </div>
 </section>
 
-<!-- ── 5️⃣ & 6️⃣ القسم الختامي المدمج ───────────────────────── -->
+<!-- ── القسم الختامي المدمج ───────────────────────────────── -->
+<!-- MODIFICATION 2: Added id="contact-section" as the scroll target -->
 <section id="final-section">
+  <div id="contact-section" style="position:absolute;top:-80px;left:0;pointer-events:none;" aria-hidden="true"></div>
   <div class="final-section-bg"></div>
   <div class="final-section-inner">
 
@@ -1084,6 +1106,8 @@ footer strong { color: rgba(255,255,255,.6); font-family: 'Cairo', sans-serif; l
       <p class="final-body reveal" style="transition-delay:.2s">
         تواصل معنا فوراً عبر واتساب وابدأ خدمتك في دقائق. بلا نماذج معقدة ولا انتظار — فقط أرسل رسالة ونتولى الباقي.
       </p>
+
+      <!-- MODIFICATION 3: Email first, then response time -->
       <div class="final-info-list reveal" style="transition-delay:.3s">
         <div class="final-info-item">
           <div class="final-info-icon">📱</div>
@@ -1093,13 +1117,14 @@ footer strong { color: rgba(255,255,255,.6); font-family: 'Cairo', sans-serif; l
           <div class="final-info-icon">📞</div>
           <span>الهاتف: <a href="tel:+213698282292" dir="ltr">+213 698 282 292</a></span>
         </div>
-        <div class="final-info-item">
-          <div class="final-info-icon">🕐</div>
-          <span>وقت الاستجابة: في غضون دقائق عادةً</span>
-        </div>
+        <!-- ✉️ Email now comes BEFORE 🕐 response time -->
         <div class="final-info-item">
           <div class="final-info-icon">✉️</div>
           <span>البريد الإلكتروني: <a href="mailto:ouchi6944@gmail.com" dir="ltr">ouchi6944@gmail.com</a></span>
+        </div>
+        <div class="final-info-item">
+          <div class="final-info-icon">🕐</div>
+          <span>وقت الاستجابة: في غضون دقائق عادةً</span>
         </div>
       </div>
     </div>
@@ -1154,6 +1179,23 @@ window.addEventListener('scroll', () => {
 document.querySelectorAll('.service-card').forEach((card, i) => {
   card.style.transitionDelay = `${i * 0.06}s`;
 });
+
+// ── MODIFICATION 2: Smooth scroll to the final contact section
+function scrollToContact() {
+  const target = document.getElementById('final-section');
+  if (!target) return;
+
+  // Use scrollIntoView with behavior:'smooth' (all modern browsers)
+  target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  // Fallback for browsers that don't support smooth scrollIntoView
+  // (applies polyfill-style offset for the fixed nav bar)
+  if (!('scrollBehavior' in document.documentElement.style)) {
+    const navHeight = navbar ? navbar.offsetHeight : 0;
+    const targetTop = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+    window.scrollTo({ top: targetTop, behavior: 'smooth' });
+  }
+}
 </script>
 </body>
 </html>
