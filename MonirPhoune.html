@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>سويفت باي — خدمات الدفع الرقمي السريعة والآمنة</title>
+<title>Monir Phoune — خدمات الدفع الرقمي السريعة والآمنة</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
@@ -20,7 +20,7 @@
   --teal:     #00d4c8;
   --gold:     #f5c842;
   --wa:       #25D366;
-  --wa-dark:  #128C7E;
+  --maps:     #4285F4;
   --radius-s: 12px;
   --radius-m: 20px;
   --radius-l: 32px;
@@ -65,7 +65,7 @@ nav {
   z-index: 100;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 18px 5%;
   background: rgba(255,255,255,.88);
   backdrop-filter: blur(16px);
@@ -75,46 +75,31 @@ nav {
 }
 nav.scrolled { box-shadow: 0 4px 24px rgba(10,15,30,.1); }
 
+/* ─── 1️⃣ Brand name: Monir Phoune — latin, centered, no WA button ─── */
 .nav-logo {
-  font-family: var(--font-head);
+  font-family: 'Cairo', sans-serif;
   font-weight: 900;
-  font-size: 1.4rem;
-  letter-spacing: 0;
+  font-size: 1.45rem;
   color: var(--ink);
   display: flex;
   align-items: center;
-  gap: 8px;
-  flex-direction: row-reverse;
+  gap: 10px;
+  direction: ltr;
+  letter-spacing: -0.3px;
 }
-.nav-logo span { color: var(--blue-1); }
+.nav-logo .brand-first { color: var(--ink); }
+.nav-logo .brand-last  { color: var(--blue-1); }
 .logo-dot {
-  width: 8px; height: 8px;
+  width: 9px; height: 9px;
   border-radius: 50%;
   background: var(--teal);
   animation: pulse 2s infinite;
+  flex-shrink: 0;
 }
 @keyframes pulse {
   0%,100% { transform: scale(1); opacity: 1; }
   50%      { transform: scale(1.4); opacity: .7; }
 }
-
-.nav-cta {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--wa);
-  color: #fff;
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: .9rem;
-  padding: 10px 20px;
-  border-radius: 100px;
-  transition: transform .2s, box-shadow .2s;
-  box-shadow: 0 4px 16px rgba(37,211,102,.35);
-  flex-direction: row-reverse;
-}
-.nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,.45); }
-.nav-cta svg { width: 16px; height: 16px; }
 
 /* ─── HERO ───────────────────────────────────────────────── */
 #hero {
@@ -155,10 +140,7 @@ nav.scrolled { box-shadow: 0 4px 24px rgba(10,15,30,.1); }
 @keyframes drift1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(30px,20px)} }
 @keyframes drift2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-20px,-30px)} }
 
-.hero-inner {
-  position: relative;
-  max-width: 740px;
-}
+.hero-inner { position: relative; max-width: 740px; }
 .hero-badge {
   display: inline-flex;
   align-items: center;
@@ -169,7 +151,6 @@ nav.scrolled { box-shadow: 0 4px 24px rgba(10,15,30,.1); }
   color: #fff;
   font-size: .85rem;
   font-weight: 600;
-  letter-spacing: 0;
   padding: 7px 16px 7px 10px;
   border-radius: 100px;
   margin-bottom: 28px;
@@ -186,7 +167,6 @@ nav.scrolled { box-shadow: 0 4px 24px rgba(10,15,30,.1); }
   font-size: clamp(2.4rem, 5.5vw, 4.2rem);
   font-weight: 900;
   line-height: 1.2;
-  letter-spacing: 0;
   color: #fff;
   margin-bottom: 24px;
 }
@@ -272,7 +252,6 @@ section { padding: 100px 5%; }
   gap: 8px;
   font-size: .8rem;
   font-weight: 700;
-  letter-spacing: 0;
   color: var(--blue-1);
   margin-bottom: 16px;
   flex-direction: row-reverse;
@@ -345,17 +324,8 @@ section { padding: 100px 5%; }
   color: var(--ink);
   margin-bottom: 10px;
 }
-.service-desc {
-  font-size: .92rem;
-  color: var(--silver);
-  line-height: 1.75;
-}
-.platforms {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 16px;
-}
+.service-desc { font-size: .92rem; color: var(--silver); line-height: 1.75; }
+.platforms { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
 .chip {
   font-size: .78rem;
   font-weight: 600;
@@ -386,12 +356,7 @@ section { padding: 100px 5%; }
 .trust-copy .section-tag::after { background: var(--teal); }
 .trust-copy .section-title { color: #fff; }
 .trust-copy .section-sub { color: rgba(255,255,255,.5); }
-.trust-items {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-top: 32px;
-}
+.trust-items { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
 .trust-item {
   display: flex;
   align-items: flex-start;
@@ -415,25 +380,13 @@ section { padding: 100px 5%; }
   justify-content: center;
   font-size: 1.2rem;
 }
-.trust-text strong {
-  display: block;
-  font-family: var(--font-head);
-  color: #fff;
-  font-weight: 800;
-  font-size: 1rem;
-  margin-bottom: 4px;
-}
+.trust-text strong { display: block; font-family: var(--font-head); color: #fff; font-weight: 800; font-size: 1rem; margin-bottom: 4px; }
 .trust-text p { font-size: .88rem; color: rgba(255,255,255,.5); }
 
-/* Card mock */
-.trust-visual {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+/* ─── CARD MOCK ──────────────────────────────────────────── */
+.trust-visual { position: relative; display: flex; align-items: center; justify-content: center; }
 .trust-card-mock {
-  background: linear-gradient(135deg, var(--blue-1), var(--blue-2));
+  background: linear-gradient(135deg, #0f1e5a, #1245ea, #2a5bd4);
   border-radius: var(--radius-l);
   width: 320px;
   height: 420px;
@@ -445,32 +398,82 @@ section { padding: 100px 5%; }
   overflow: hidden;
   box-shadow: var(--shadow-l);
 }
+/* subtle card texture */
+.trust-card-mock::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 120% 60% at 80% 10%, rgba(255,255,255,.12), transparent 60%),
+    repeating-linear-gradient(135deg, rgba(255,255,255,.025) 0px, rgba(255,255,255,.025) 1px, transparent 1px, transparent 40px);
+  pointer-events: none;
+}
 .mock-shine {
   position: absolute;
   top: -60px; left: -60px;
   width: 240px; height: 240px;
-  background: radial-gradient(circle, rgba(255,255,255,.25), transparent 70%);
+  background: radial-gradient(circle, rgba(255,255,255,.22), transparent 70%);
   border-radius: 50%;
 }
-.mock-chip { width: 44px; height: 32px; background: var(--gold); border-radius: 6px; margin-bottom: 30px; position: relative; z-index: 1; }
-.mock-num { font-family: 'Cairo', sans-serif; color: rgba(255,255,255,.7); font-size: .85rem; letter-spacing: 2px; position: relative; z-index: 1; margin-bottom: 8px; direction: ltr; text-align: left; }
-.mock-name { font-family: var(--font-head); color: #fff; font-size: 1.1rem; font-weight: 800; position: relative; z-index: 1; }
-.mock-badge {
+.mock-logo-area {
   position: absolute;
-  top: 28px; left: 28px;
-  background: rgba(255,255,255,.15);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,.25);
-  border-radius: 100px;
-  padding: 6px 14px;
+  top: 28px; right: 28px;
+  z-index: 2;
+  text-align: right;
+}
+.mock-brand {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 900;
+  font-size: 1rem;
   color: #fff;
-  font-size: .78rem;
-  font-weight: 700;
+  letter-spacing: 0.3px;
+  direction: ltr;
   display: flex;
   align-items: center;
   gap: 6px;
 }
+.mock-brand .b1 { color: rgba(255,255,255,.9); }
+.mock-brand .b2 { color: var(--teal); }
+.mock-brand-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); animation: pulse 2s infinite; }
+.mock-status {
+  font-size: .7rem;
+  color: rgba(255,255,255,.55);
+  direction: ltr;
+  margin-top: 3px;
+  text-align: left;
+}
+.mock-badge {
+  position: absolute;
+  top: 28px; left: 28px;
+  background: rgba(255,255,255,.12);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 100px;
+  padding: 5px 12px;
+  color: #fff;
+  font-size: .75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 2;
+}
 .mock-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); animation: pulse 2s infinite; }
+.mock-chip { width: 44px; height: 32px; background: linear-gradient(135deg, var(--gold), #e0a800); border-radius: 6px; margin-bottom: 28px; position: relative; z-index: 1; box-shadow: 0 2px 8px rgba(0,0,0,.3); }
+.mock-chip::after { content:''; position:absolute; top:50%; left:0; right:0; height:1px; background:rgba(0,0,0,.15); }
+.mock-num { font-family: 'Cairo', monospace; color: rgba(255,255,255,.75); font-size: .88rem; letter-spacing: 3px; position: relative; z-index: 1; margin-bottom: 10px; direction: ltr; }
+.mock-label { font-size: .65rem; color: rgba(255,255,255,.45); text-transform: uppercase; letter-spacing: .08em; position: relative; z-index: 1; margin-bottom: 4px; direction: ltr; }
+.mock-name {
+  font-family: 'Cairo', sans-serif;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 800;
+  position: relative;
+  z-index: 1;
+  direction: ltr;
+  letter-spacing: 0.5px;
+}
+
 .floating-pill {
   position: absolute;
   background: var(--white);
@@ -496,7 +499,7 @@ section { padding: 100px 5%; }
   background: linear-gradient(135deg, #f0f3fa 0%, #e8f0fe 100%);
   text-align: center;
 }
-.local-inner { max-width: 700px; margin: 0 auto; }
+.local-inner { max-width: 780px; margin: 0 auto; }
 .store-graphic {
   width: 100px; height: 100px;
   border-radius: 28px;
@@ -516,56 +519,174 @@ section { padding: 100px 5%; }
   color: var(--ink);
   line-height: 1.3;
 }
-.local-sub {
-  font-size: 1rem;
-  color: var(--silver);
-  max-width: 500px;
-  margin: 0 auto;
-  line-height: 1.8;
+.local-sub { font-size: 1rem; color: var(--silver); max-width: 500px; margin: 0 auto; line-height: 1.8; }
+
+/* ─── LOCAL ACTIONS ROW ──────────────────────────────────── */
+.local-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 40px;
 }
 
-/* ─── CONTACT ────────────────────────────────────────────── */
-#contact { background: var(--white); }
-.contact-wrap {
-  max-width: 980px;
+/* Maps button */
+.btn-maps {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, var(--maps), #1a73e8);
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 16px 32px;
+  border-radius: 100px;
+  box-shadow: 0 8px 32px rgba(66,133,244,.4);
+  transition: transform .25s var(--ease-out), box-shadow .25s;
+  flex-direction: row-reverse;
+}
+.btn-maps:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 14px 40px rgba(66,133,244,.55); }
+.btn-maps svg { width: 18px; height: 18px; fill: #fff; }
+
+/* Hours card */
+.hours-card {
+  background: var(--white);
+  border-radius: var(--radius-m);
+  padding: 24px 28px;
+  box-shadow: 0 4px 24px rgba(10,15,30,.1);
+  border: 1px solid rgba(18,69,234,.08);
+  text-align: right;
+  min-width: 260px;
+  max-width: 320px;
+}
+.hours-title {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--ink);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-direction: row-reverse;
+}
+.hours-open-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(37,211,102,.12);
+  color: #1a9945;
+  font-size: .72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 100px;
+  margin-bottom: 14px;
+}
+.hours-open-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--wa); animation: pulse 2s infinite; }
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(18,69,234,.06);
+  font-size: .84rem;
+  gap: 12px;
+}
+.hours-row:last-child { border-bottom: none; }
+.hours-day { color: var(--silver); font-weight: 500; white-space: nowrap; }
+.hours-time { color: var(--ink); font-weight: 600; text-align: left; direction: ltr; font-size: .82rem; line-height: 1.5; }
+
+/* ─── MERGED FINAL SECTION ───────────────────────────────── */
+#final-section {
+  background: var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+.final-section-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 50% 100%, rgba(18,69,234,.3), transparent 70%),
+    radial-gradient(ellipse 40% 40% at 80% 20%, rgba(0,212,200,.15), transparent 60%);
+  pointer-events: none;
+}
+.final-section-inner {
+  position: relative;
+  max-width: 900px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 64px;
   align-items: center;
 }
-.contact-copy .section-title { margin-bottom: 20px; }
-.contact-copy p { color: var(--silver); margin-bottom: 32px; font-size: .95rem; }
-.contact-info-item {
+
+/* Left column: copy + contact info */
+.final-copy { }
+.final-copy .section-tag { color: var(--teal); }
+.final-copy .section-tag::after { background: var(--teal); }
+.final-main-title {
+  font-family: var(--font-head);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+.final-main-title .hl {
+  background: linear-gradient(135deg, var(--teal), var(--blue-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.final-body {
+  color: rgba(255,255,255,.6);
+  font-size: .98rem;
+  line-height: 1.85;
+  margin-bottom: 32px;
+  font-weight: 300;
+}
+.final-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.final-info-item {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 14px;
-  font-size: .95rem;
-  color: var(--ink-2);
+  font-size: .92rem;
+  color: rgba(255,255,255,.75);
   flex-direction: row-reverse;
   text-align: right;
 }
-.info-icon {
-  width: 38px; height: 38px;
+.final-info-icon {
+  width: 36px; height: 36px;
   border-radius: 9px;
-  background: var(--ghost);
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.12);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
+  font-size: .95rem;
   flex-shrink: 0;
 }
-.contact-card {
-  background: linear-gradient(160deg, #0a0f1e, #1a2035);
+.final-info-item a { color: rgba(255,255,255,.85); font-weight: 600; }
+.final-info-item a:hover { color: var(--teal); }
+
+/* Right column: CTA card */
+.final-cta-card {
+  background: linear-gradient(160deg, #0d1428, #1a2240);
   border-radius: var(--radius-l);
   padding: 44px 36px;
   text-align: center;
   position: relative;
   overflow: hidden;
-  box-shadow: var(--shadow-l);
+  box-shadow: 0 20px 60px rgba(0,0,0,.4);
+  border: 1px solid rgba(255,255,255,.07);
 }
-.contact-card::before {
+.final-cta-card::before {
   content: '';
   position: absolute;
   top: -60px; left: 50%;
@@ -589,7 +710,7 @@ section { padding: 100px 5%; }
 }
 @keyframes waFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
 .wa-logo-big svg { width: 44px; height: 44px; fill: #fff; }
-.contact-card h3 {
+.final-cta-card h3 {
   font-family: var(--font-head);
   font-size: 1.5rem;
   font-weight: 900;
@@ -598,7 +719,14 @@ section { padding: 100px 5%; }
   position: relative;
   z-index: 1;
 }
-.contact-card p { color: rgba(255,255,255,.5); font-size: .9rem; margin-bottom: 28px; position: relative; z-index: 1; }
+.final-cta-card .sub-note {
+  color: rgba(255,255,255,.5);
+  font-size: .9rem;
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 1;
+  line-height: 1.65;
+}
 .btn-wa-big {
   display: inline-flex;
   align-items: center;
@@ -618,59 +746,6 @@ section { padding: 100px 5%; }
   flex-direction: row-reverse;
 }
 .btn-wa-big:hover { transform: scale(1.03) translateY(-2px); box-shadow: 0 14px 36px rgba(37,211,102,.55); }
-.phone-display {
-  margin-top: 20px;
-  font-size: .88rem;
-  color: rgba(255,255,255,.4);
-  position: relative;
-  z-index: 1;
-}
-.phone-display a { color: rgba(255,255,255,.7); font-weight: 600; direction: ltr; display: inline-block; }
-
-/* ─── FINAL CTA ──────────────────────────────────────────── */
-#final-cta {
-  background: var(--ink);
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.final-bg {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 60% 80% at 50% 100%, rgba(18,69,234,.3), transparent 70%),
-    radial-gradient(ellipse 40% 40% at 80% 20%, rgba(0,212,200,.15), transparent 60%);
-}
-.final-inner {
-  position: relative;
-  max-width: 700px;
-  margin: 0 auto;
-}
-.final-inner .section-tag { color: var(--teal); justify-content: center; }
-.final-inner .section-tag::after { background: var(--teal); }
-.final-title {
-  font-family: var(--font-head);
-  font-size: clamp(2rem, 4.5vw, 3.4rem);
-  font-weight: 900;
-  color: #fff;
-  line-height: 1.25;
-  margin-bottom: 20px;
-}
-.final-title .hl {
-  background: linear-gradient(135deg, var(--teal), var(--blue-2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.final-sub {
-  color: rgba(255,255,255,.5);
-  font-size: 1rem;
-  margin-bottom: 44px;
-  max-width: 480px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.8;
-}
 
 /* ─── FOOTER ─────────────────────────────────────────────── */
 footer {
@@ -681,7 +756,7 @@ footer {
   color: rgba(255,255,255,.3);
   font-family: var(--font-body);
 }
-footer strong { color: rgba(255,255,255,.6); font-family: var(--font-head); }
+footer strong { color: rgba(255,255,255,.6); font-family: 'Cairo', sans-serif; letter-spacing: .3px; direction: ltr; display: inline-block; }
 
 /* ─── STICKY WA ──────────────────────────────────────────── */
 .sticky-wa {
@@ -717,35 +792,35 @@ footer strong { color: rgba(255,255,255,.6); font-family: var(--font-head); }
 @media (max-width: 900px) {
   .trust-grid { grid-template-columns: 1fr; gap: 40px; }
   .trust-visual { display: none; }
-  .contact-wrap { grid-template-columns: 1fr; gap: 40px; }
+  .final-section-inner { grid-template-columns: 1fr; gap: 40px; }
 }
 @media (max-width: 768px) {
   section { padding: 72px 5%; }
   nav { padding: 14px 5%; }
   .hero-stats { gap: 24px; }
-  .btn-primary { font-size: .95rem; padding: 14px 24px; }
+  .local-actions { flex-direction: column; align-items: center; }
+  .hours-card { width: 100%; max-width: 100%; }
 }
 @media (max-width: 480px) {
   .hero-actions { flex-direction: column; align-items: stretch; }
-  .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+  .btn-primary, .btn-secondary, .btn-maps { width: 100%; justify-content: center; }
   .hero-h1 { font-size: 2.1rem; }
   .services-grid { grid-template-columns: 1fr; }
   .hero-stats { gap: 20px; }
+  .nav-logo { font-size: 1.2rem; }
 }
 </style>
 </head>
 <body>
 
 <!-- ── شريط التنقل ─────────────────────────────────────────── -->
+<!-- 1️⃣ Brand = "Monir Phoune" — no WhatsApp button -->
 <nav id="navbar">
   <div class="nav-logo">
+    <span class="brand-first">Monir</span>
+    <span class="brand-last">Phoune</span>
     <div class="logo-dot"></div>
-    سويفت<span>باي</span>
   </div>
-  <a href="https://wa.me/213698282292" class="nav-cta" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.555 4.122 1.528 5.861L0 24l6.312-1.511A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.795 9.795 0 01-5.003-1.371l-.36-.213-3.73.893.942-3.632-.233-.374A9.789 9.789 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
-    واتساب
-  </a>
 </nav>
 
 <!-- ── القسم الرئيسي ──────────────────────────────────────── -->
@@ -770,9 +845,7 @@ footer strong { color: rgba(255,255,255,.6); font-family: var(--font-head); }
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.555 4.122 1.528 5.861L0 24l6.312-1.511A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.795 9.795 0 01-5.003-1.371l-.36-.213-3.73.893.942-3.632-.233-.374A9.789 9.789 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
         اطلب الآن عبر واتساب
       </a>
-      <a href="#services" class="btn-secondary">
-        ↓ اكتشف خدماتنا
-      </a>
+      <a href="#services" class="btn-secondary">↓ اكتشف خدماتنا</a>
     </div>
     <div class="hero-stats reveal" style="transition-delay:.4s">
       <div class="stat-item">
@@ -836,6 +909,7 @@ footer strong { color: rgba(255,255,255,.6); font-family: var(--font-head); }
       <div class="service-desc">ننفّذ مشترياتك من Temu بسرعة وموثوقية — بدون عناء مشاكل الدفع الدولي.</div>
     </div>
 
+    <!-- 2️⃣ "المزيد" → "وغيرها" -->
     <div class="service-card reveal" style="transition-delay:.25s">
       <div class="service-icon">🤖</div>
       <div class="service-name">تفعيل اشتراكات الذكاء الاصطناعي</div>
@@ -843,7 +917,7 @@ footer strong { color: rgba(255,255,255,.6); font-family: var(--font-head); }
       <div class="platforms">
         <span class="chip">ChatGPT</span>
         <span class="chip">Gemini</span>
-        <span class="chip">+ المزيد</span>
+        <span class="chip">وغيرها</span>
       </div>
     </div>
 
@@ -907,13 +981,23 @@ footer strong { color: rgba(255,255,255,.6); font-family: var(--font-head); }
         </div>
       </div>
     </div>
+
+    <!-- 3️⃣ Card now shows "Monir Phoune" branding -->
     <div class="trust-visual reveal reveal-right" style="transition-delay:.3s">
       <div class="trust-card-mock">
         <div class="mock-shine"></div>
+        <div class="mock-logo-area">
+          <div class="mock-brand">
+            <div class="mock-brand-dot"></div>
+            <span class="b1">Monir</span><span class="b2">Phoune</span>
+          </div>
+          <div class="mock-status">Digital Services</div>
+        </div>
         <div class="mock-badge"><div class="mock-dot"></div> مباشر وآمن</div>
         <div class="mock-chip"></div>
         <div class="mock-num">•••• •••• •••• 2292</div>
-        <div class="mock-name">سويفت باي</div>
+        <div class="mock-label">Card Holder</div>
+        <div class="mock-name">Monir Phoune</div>
       </div>
       <div class="floating-pill pill-1">
         <div class="pill-icon">⚡</div>
@@ -927,7 +1011,7 @@ footer strong { color: rgba(255,255,255,.6); font-family: var(--font-head); }
   </div>
 </section>
 
-<!-- ── الخدمة الحضورية ────────────────────────────────────── -->
+<!-- ── 4️⃣ الخدمة الحضورية — Maps button + hours ──────────── -->
 <section id="local">
   <div class="local-inner">
     <div class="store-graphic reveal">🏪</div>
@@ -936,74 +1020,109 @@ footer strong { color: rgba(255,255,255,.6); font-family: var(--font-head); }
     <p class="local-sub reveal" style="transition-delay:.3s">
       الخدمة الحضورية متاحة في متجرنا لأقصى درجات الراحة والثقة. تعال، أنجز طلبك، وانصرف راضياً تماماً — الأمر بهذه البساطة.
     </p>
-    <div style="margin-top:36px" class="reveal">
-      <a href="https://wa.me/213698282292" class="btn-primary" target="_blank" rel="noopener" style="display:inline-flex">
-        📍 راسلنا لتحديد موعد زيارة
+
+    <div class="local-actions reveal" style="transition-delay:.4s">
+      <!-- Maps button replacing WhatsApp button -->
+      <a href="https://maps.app.goo.gl/fXuRAXorLoXPgnMGA" class="btn-maps" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+        📍 موقع المحل
       </a>
+
+      <!-- Hours card from the screenshot -->
+      <div class="hours-card">
+        <div class="hours-title">
+          🕐 مواقيت العمل
+        </div>
+        <div class="hours-open-badge">
+          <div class="hours-open-dot"></div>
+          مفتوح الآن
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">الاثنين</span>
+          <span class="hours-time">9:30 AM – 6:00 PM<br>9:00 PM – 12:00 AM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">الثلاثاء</span>
+          <span class="hours-time">9:30 AM – 6:00 PM<br>9:00 PM – 12:00 AM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">الأربعاء</span>
+          <span class="hours-time">9:30 AM – 6:00 PM<br>9:00 PM – 12:00 AM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">الخميس</span>
+          <span class="hours-time">9:30 AM – 6:00 PM<br>9:00 PM – 12:00 AM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">الجمعة</span>
+          <span class="hours-time">9:30 AM – 6:00 PM<br>9:00 PM – 12:00 AM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">السبت</span>
+          <span class="hours-time">9:30 AM – 6:00 PM<br>9:00 PM – 12:00 AM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-day">الأحد</span>
+          <span class="hours-time">9:30 AM – 6:00 PM<br>9:00 PM – 12:00 AM</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ── التواصل ───────────────────────────────────────────── -->
-<section id="contact">
-  <div class="contact-wrap">
-    <div class="contact-copy">
-      <div class="section-tag reveal">تواصل معنا</div>
-      <h2 class="section-title reveal" style="transition-delay:.1s">جاهز للطلب؟<br>تحدّث إلينا.</h2>
-      <p class="reveal" style="transition-delay:.2s">تواصل معنا فوراً عبر واتساب وابدأ خدمتك في دقائق. بلا نماذج معقدة ولا انتظار — فقط أرسل رسالة ونتولى الباقي.</p>
-      <div class="reveal" style="transition-delay:.3s">
-        <div class="contact-info-item">
-          <div class="info-icon">📱</div>
+<!-- ── 5️⃣ & 6️⃣ القسم الختامي المدمج ───────────────────────── -->
+<section id="final-section">
+  <div class="final-section-bg"></div>
+  <div class="final-section-inner">
+
+    <!-- Copy + contact info -->
+    <div class="final-copy">
+      <div class="section-tag reveal">ابدأ اليوم</div>
+      <h2 class="final-main-title reveal" style="transition-delay:.1s">
+        تحتاج شحناً، دفعاً،<br>أو <span class="hl">تفعيل اشتراك؟</span>
+      </h2>
+      <p class="final-body reveal" style="transition-delay:.2s">
+        تواصل معنا فوراً عبر واتساب وابدأ خدمتك في دقائق. بلا نماذج معقدة ولا انتظار — فقط أرسل رسالة ونتولى الباقي.
+      </p>
+      <div class="final-info-list reveal" style="transition-delay:.3s">
+        <div class="final-info-item">
+          <div class="final-info-icon">📱</div>
           <span>واتساب: <strong>0698282292</strong></span>
         </div>
-        <div class="contact-info-item">
-          <div class="info-icon">📞</div>
-          <span>الهاتف: <a href="tel:+213698282292" style="color:var(--blue-1);font-weight:600;direction:ltr;display:inline-block">+213 698 282 292</a></span>
+        <div class="final-info-item">
+          <div class="final-info-icon">📞</div>
+          <span>الهاتف: <a href="tel:+213698282292" dir="ltr">+213 698 282 292</a></span>
         </div>
-        <div class="contact-info-item">
-          <div class="info-icon">🕐</div>
+        <div class="final-info-item">
+          <div class="final-info-icon">🕐</div>
           <span>وقت الاستجابة: في غضون دقائق عادةً</span>
+        </div>
+        <div class="final-info-item">
+          <div class="final-info-icon">✉️</div>
+          <span>البريد الإلكتروني: <a href="mailto:ouchi6944@gmail.com" dir="ltr">ouchi6944@gmail.com</a></span>
         </div>
       </div>
     </div>
-    <div class="contact-card reveal reveal-right" style="transition-delay:.2s">
+
+    <!-- CTA card -->
+    <div class="final-cta-card reveal reveal-right" style="transition-delay:.2s">
       <div class="wa-logo-big">
         <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.555 4.122 1.528 5.861L0 24l6.312-1.511A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.795 9.795 0 01-5.003-1.371l-.36-.213-3.73.893.942-3.632-.233-.374A9.789 9.789 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
       </div>
       <h3>تحدّث معنا الآن</h3>
-      <p>أرسل لنا رسالة وابدأ طلبك في غضون دقائق. نحن جاهزون لمساعدتك!</p>
+      <p class="sub-note">أرسل لنا رسالة وابدأ طلبك في غضون دقائق.<br>نحن جاهزون لمساعدتك!</p>
       <a href="https://wa.me/213698282292" class="btn-wa-big" target="_blank" rel="noopener">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.555 4.122 1.528 5.861L0 24l6.312-1.511A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.795 9.795 0 01-5.003-1.371l-.36-.213-3.73.893.942-3.632-.233-.374A9.789 9.789 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
         افتح محادثة واتساب
       </a>
-      <div class="phone-display">أو اتصل بنا على <a href="tel:+213698282292">+213 698 282 292</a></div>
     </div>
-  </div>
-</section>
 
-<!-- ── CTA الختامي ────────────────────────────────────────── -->
-<section id="final-cta">
-  <div class="final-bg"></div>
-  <div class="final-inner">
-    <div class="section-tag reveal">ابدأ اليوم</div>
-    <h2 class="final-title reveal" style="transition-delay:.1s">
-      تحتاج شحناً، دفعاً،<br>أو <span class="hl">تفعيل اشتراك؟</span>
-    </h2>
-    <p class="final-sub reveal" style="transition-delay:.2s">
-      تواصل معنا فوراً عبر واتساب واحصل على خدمتك بسرعة. بلا انتظار ولا تعقيدات — فقط نتائج.
-    </p>
-    <div class="reveal" style="transition-delay:.3s">
-      <a href="https://wa.me/213698282292" class="btn-primary" style="display:inline-flex;font-size:1.1rem;padding:18px 44px;" target="_blank" rel="noopener">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.555 4.122 1.528 5.861L0 24l6.312-1.511A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.795 9.795 0 01-5.003-1.371l-.36-.213-3.73.893.942-3.632-.233-.374A9.789 9.789 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
-        راسلنا على واتساب
-      </a>
-    </div>
   </div>
 </section>
 
 <!-- ── تذييل الصفحة ────────────────────────────────────────── -->
 <footer>
-  <p>© 2025 <strong>سويفت باي</strong> · خدمات الدفع الرقمي السريعة والآمنة · الجزائر</p>
+  <p>© 2025 <strong>Monir Phoune</strong> · خدمات الدفع الرقمي السريعة والآمنة · الجزائر</p>
   <p style="margin-top:8px">📱 <a href="https://wa.me/213698282292" style="color:rgba(255,255,255,.5);direction:ltr;display:inline-block">+213 698 282 292</a></p>
 </footer>
 
